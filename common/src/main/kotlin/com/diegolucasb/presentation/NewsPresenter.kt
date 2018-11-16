@@ -1,21 +1,21 @@
-package com.marcinmoskala.presentation
+package com.diegolucasb.presentation
 
-import com.marcinmoskala.repository.QuotationRepository
-import com.marcinmoskala.view.QuotationView
+import com.diegolucasb.repository.NewsRepository
+import com.diegolucasb.view.NewsView
 
-class QuotationPresenter(
-        private val view: QuotationView,
-        private val repo: QuotationRepository
+class NewsPresenter(
+        private val view: NewsView,
+        private val repo: NewsRepository
 ) {
-    private var nextQuoteId = -1
+    private var newsNewsId = -1
 
     fun onStart() {
         onNext()
     }
 
     fun onNext() {
-        nextQuoteId = (nextQuoteId + 1) % repo.quotesNumber
-        val quote = repo.getQuote(nextQuoteId)
-        view.showQuote(quote)
+        newsNewsId = (newsNewsId + 1) % repo.newsNumber
+        val news = repo.getNews(newsNewsId)
+        view.showNews(news)
     }
 }

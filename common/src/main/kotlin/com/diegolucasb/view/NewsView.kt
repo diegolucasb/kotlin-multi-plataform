@@ -1,4 +1,8 @@
 package com.diegolucasb.view
 
-class NewsView {
+import com.diegolucasb.data.News
+
+
+interface NewsView {
+    fun showNews(news: News)
 }

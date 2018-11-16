@@ -1,21 +1,31 @@
-package com.marcinmoskala.repository
+package com.diegolucasb.repository
 
-import com.marcinmoskala.data.Quote
+import com.diegolucasb.data.News
 
-class QuotationRepositoryImpl : QuotationRepository {
+class NewsRepositoryImpl : NewsRepository {
 
-    override val quotesNumber: Int
-        get() = quotes.size
+    override val newsNumber: Int
+        get() = news.size
 
-    override fun getQuote(quoteId: Int): Quote = quotes[quoteId]
+    override fun getNews(newsId: Int): News = news[newsId]
 
     companion object {
-        private val quotes = listOf(
-                Quote("I skate to where the puck is going to be, not where it has been.", "Wayne Gretzky"),
-                Quote("The future is already here — it's just not very evenly distributed.", "William Gibson"),
-                Quote("I want to impact the world through futuristic yet affordable technologies to make the world a better place.", "Pranav Mistry"),
-                Quote("Every once in a while, a new technology, an old problem, and a big idea turn into an innovation.", "Dean Kamen"),
-                Quote("Seven thousand years is just one day at a time.", "Terry Pratchett")
+        private val news = listOf(
+                News(
+                        "Governo cubano quer tirar seus médicos do Brasil até o fim do ano",
+                        "Brasil",
+                        "Globo.com",
+                        "https://g1.globo.com/politica/noticia/2018/11/15/conselho-diz-que-foi-avisado-pela-embaixada-de-cuba-que-medicos-deixarao-brasil-ate-fim-do-ano.ghtml"),
+                News(
+                        "Google descobre forma de economizar bateria de celular em até 63%",
+                        "Tecnologia",
+                        "TechTudo",
+                        "https://www.techtudo.com.br/noticias/2018/11/google-descobre-forma-de-economizar-bateria-de-celular-em-ate-63.ghtml"),
+                News(
+                        "Vice-presidente dos EUA diz que Donald Trump deve ter 2º encontro com Kim Jong-Un em 2019",
+                        "Mundo",
+                        "G1",
+                        "https://g1.globo.com/mundo/noticia/2018/11/15/vice-presidente-dos-eua-diz-que-donald-trump-deve-ter-2o-encontro-com-kim-jong-un-em-2019.ghtml")
         )
     }
 }

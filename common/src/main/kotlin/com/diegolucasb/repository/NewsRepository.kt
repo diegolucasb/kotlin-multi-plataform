@@ -1,8 +1,8 @@
-package com.marcinmoskala.repository
+package com.diegolucasb.repository
 
-import com.marcinmoskala.data.Quote
+import com.diegolucasb.data.News
 
-interface QuotationRepository {
-    val quotesNumber: Int
-    fun getQuote(quoteId: Int): Quote
+interface NewsRepository {
+    val newsNumber: Int
+    fun getNews(newsId: Int): News
 }

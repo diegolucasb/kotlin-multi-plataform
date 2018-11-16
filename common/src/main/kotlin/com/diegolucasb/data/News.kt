@@ -1,11 +1,8 @@
 package com.diegolucasb.data
 
-
-
-data class Notification(
+data class News(
         val text: String,
-        val from: String,
-        val date: Long
-
-
+        val category: String,
+        val source: String,
+        val link: String
 )
