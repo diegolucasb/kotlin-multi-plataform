@@ -13,7 +13,8 @@ allprojects {
         }
         dependencies {
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-            classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:0.9.2-dev-3973"
+            classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:0.9.2-dev-4008"
+//            classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:0.9.2-dev-3973"
             classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.32"
             classpath 'com.moowork.gradle:gradle-node-plugin:1.2.0'
         }
