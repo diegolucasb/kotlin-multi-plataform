@@ -2,11 +2,11 @@ package com.diegolucasb
 
 import android.app.Activity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_quotations.*
 import com.diegolucasb.data.News
 import com.diegolucasb.presentation.NewsPresenter
 import com.diegolucasb.repository.NewsRepositoryImpl
 import com.diegolucasb.view.NewsView
+import kotlinx.android.synthetic.main.activity_news.*
 
 class NewsActivity : Activity(), NewsView {
 
@@ -15,13 +15,13 @@ class NewsActivity : Activity(), NewsView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quotations)
+        setContentView(R.layout.activity_news)
         presenter.onStart()
         nextButton.setOnClickListener { presenter.onNext() }
     }
 
     override fun showNews(news: News) {
-//        textView.text = quote.text
-//        authorView.text = quote.person
+        textView.text = news.text
+        sourceView.text = news.source
     }
 }
