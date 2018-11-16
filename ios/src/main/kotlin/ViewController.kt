@@ -9,10 +9,10 @@
 import kotlinx.cinterop.*
 import platform.Foundation.*
 import platform.UIKit.*
-import com.marcinmoskala.data.Quote
-import com.marcinmoskala.presentation.QuotationPresenter
-import com.marcinmoskala.repository.QuotationRepositoryImpl
-import com.marcinmoskala.view.QuotationView
+import com.diegolucasb.data.News
+import com.diegolucasb.presentation.NewsPresenter
+import com.diegolucasb.repository.NewsRepositoryImpl
+import com.diegolucasb.view.NewsView
 
 @ExportObjCClass
 class ViewController : UIViewController {
@@ -21,16 +21,16 @@ class ViewController : UIViewController {
     override fun initWithCoder(aDecoder: NSCoder) = initBy(ViewController(aDecoder))
 
     @ObjCOutlet lateinit var textView: UILabel
-    @ObjCOutlet lateinit var authorView: UILabel
+    @ObjCOutlet lateinit var sourceView: UILabel
 
-    private val quotationView = object : QuotationView {
-        override fun showQuote(quote: Quote) {
-            textView.text = quote.text
-            authorView.text = quote.person
+    private val newsView = object : NewsView {
+        override fun showNews(news: News) {
+            textView.text = news.text
+            authorView.text = news.source
         }
     }
-    private val quotationsRepo = QuotationRepositoryImpl()
-    private val presenter = QuotationPresenter(quotationView, quotationsRepo)
+    private val repository = NewsRepositoryImpl()
+    private val presenter = NewsPresenter(newsView, repository)
 
     override fun viewDidLoad() {
         presenter.onStart()
