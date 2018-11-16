@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quotations</title>
+    <title>News - DevFest</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <div class="center">
-    <div class="quotation-container">
+    <div class="news-container">
         <div class="text" id="text"></div>
-        <div class="person" id="author"></div>
+        <div class="source" id="source"></div>
         <button class="next" onclick="presenter.onNext()">Next</button>
     </div>
 </div>
@@ -17,15 +17,15 @@
 <script type="text/javascript" src="build/web/kotlin.js"></script>
 <script type="text/javascript" src="build/web/web-vanilla.js"></script>
 <script>
-    var common = this['web-vanilla'].com.marcinmoskala
+    var common = this['web-vanilla'].com.diegolucasb
     var view = new function() {
-        this.showQuote = function(quote) {
-            document.getElementById("text").innerHTML = quote.text;
-            document.getElementById("author").innerHTML = quote.person;
+        this.showNews = function(news) {
+            document.getElementById("text").innerHTML = news.text;
+            document.getElementById("source").innerHTML = news.source;
         }
     };
-    var repo = new common.repository.QuotationRepositoryImpl()
-    var presenter = new common.presentation.QuotationPresenter(view,repo);
+    var repository = new common.repository.NewsRepositoryImpl()
+    var presenter = new common.presentation.NewsPresenter(view,repository);
     presenter.onStart()
 </script>
 </html>
