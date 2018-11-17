@@ -26,7 +26,7 @@ class ViewController : UIViewController {
     private val newsView = object : NewsView {
         override fun showNews(news: News) {
             textView.text = news.text
-            authorView.text = news.source
+            sourceView.text = news.person
         }
     }
     private val repository = NewsRepositoryImpl()
