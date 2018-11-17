@@ -1,3 +1,3 @@
 # Kotlin Multi Plataform Project example
 
-## Based on [KotlinMultiPlataformExample project from Marcin Moskala](https://github.com/MarcinMoskala/KotlinMultiplatformExample)
+## Based on [KotlinMultiPlataformExample](https://github.com/MarcinMoskala/KotlinMultiplatformExample) project from Marcin Moskala
