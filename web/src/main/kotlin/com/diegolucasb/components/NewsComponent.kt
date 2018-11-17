@@ -8,7 +8,6 @@ import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.button
 import react.dom.div
-import react.dom.link
 
 class NewsComponent: RComponent<RProps, ManagerComponentState>(), NewsView {
 
@@ -26,9 +25,7 @@ class NewsComponent: RComponent<RProps, ManagerComponentState>(), NewsView {
                 +"There is no news"
             } else {
                 div(classes = "news-container") {
-                    div(classes = "text") { +news.text
-//                        link { +news.link }
-                    }
+                    div(classes = "text") { +news.text }
                     div(classes = "source") { +news.source }
                     button(classes = "next") {
                         +"Next"
